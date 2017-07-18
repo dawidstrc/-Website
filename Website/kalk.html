@@ -1,0 +1,507 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>HTML + CSS + JacaScript</title>
+	<meta name="description" content="Strona poświęcona informatyce" />
+	<meta name="keywords" content="informatyka, programowanie, html, css, javascript" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+	
+	<div id="container">
+	
+		<!--<div id="logo">
+		HTML CSS JacaScript
+		</div>-->
+		
+		
+		<div id="topbar">
+			<div id="topbarL">
+				<img src="logo.jpg" />
+			</div>
+
+			<div id="topbarR">
+				<span class="bigtitle">HTML + CSS + JavaScript</span>
+				<div style="height: 15px;"></div>
+				
+			</div>
+			
+			<div style="clear:both;"></div>
+		</div>
+			<div id="menu">
+			<div class="option"><a style="color: #FFFFFF; text-decoration:none;" href="index.html">Strona główna</a></div>
+			<div class="option"><a style="color: #FFFFFF; text-decoration:none;" href="html.html">HTML</a></div>
+			<div class="option"><a style="color: #FFFFFF; text-decoration:none;" href="css.html">CSS</a></div>
+			<div class="option"><a style="color: #FFFFFF; text-decoration:none;" href="JavaScript.html">JavaScript</a></div>
+			<div class="option"><a style="color: #FFFFFF; text-decoration:none;" href="kontakt.html">Kontakt</a></div>
+			<div style="clear:both;"></div>
+		</div>
+		</br>
+		<div id="sidebar">
+			
+			<div class="optionL"><a style="color: #000000; text-decoration:none;" href="srednia.html">Srednia ocen</a></div>
+			<div class="optionL"><a style="color: #000000; text-decoration:none;" href="kalk.html">Kalkulator graficzny</a></div>
+			<div class="optionL"><a style="color: #000000; text-decoration:none;" href="waluty.html">Konwerter walut</a></div>
+		</div>
+		
+		<div id="content">
+			<style type="text/css">
+	
+
+
+
+		#kalkulator 
+		{
+		
+		
+		
+		font: bold 14px Arial, sans-serif;
+		margin: 0;
+			padding: 0;
+		box-sizing: border-box;
+			width: 325px;
+			height: auto;
+	
+			margin: 100px auto;
+			padding: 20px 20px 9px;
+	
+			background: #9dd2ea;
+			background: linear-gradient(#6600ff, #ff0033);
+			border-radius: 3px;
+			box-shadow: 0px 4px #009de4, 0px 10px 15px rgba(0, 0, 0, 0.2);
+		}
+
+
+			.klasa span.czysc 
+			{
+				float: left;
+			
+			}
+
+
+			.klasa .ekran 
+			{
+				height: 40px;
+				width: 180px;
+				
+				float: right;
+				
+				padding: 0 10px;
+				
+				background: rgba(0, 0, 0, 0.2);
+				border-radius: 3px;
+				box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+				
+				
+				font-size: 17px;
+				line-height: 40px;
+				color: #66ff66;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+				text-align: right;
+				letter-spacing: 1px;
+			}
+			.ekran2
+			{
+			height: 40px;
+				width: 180px;
+				
+				float: right;
+				
+				padding: 0 10px;
+				
+				background: rgba(0, 0, 0, 0.2);
+				border-radius: 3px;
+				box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+				
+				
+				font-size: 17px;
+				line-height: 40px;
+				color: #66ff66;
+				text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+				text-align: right;
+				letter-spacing: 1px;
+			
+			
+			}
+
+		.znaki, .klasa {overflow: hidden;}
+
+
+			.znaki span, .klasa span.czysc 
+		{
+			float: left;
+			position: relative;
+			klasa: 0;
+			
+			cursor: pointer;
+			
+			width: 66px;
+			height: 36px;
+			
+			background: #adadad;
+			border-radius: 3px;
+			box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+			
+			margin: 0 7px 11px 0;
+			
+			color: #00ff66;
+			line-height: 36px;
+			text-align: center;
+			
+
+			user-select: none;
+			
+			transition: all 0.2s ease;
+		}
+
+
+		.znaki span.operator 
+		{
+			background: #22282E;
+			margin-right: 0;
+		}
+
+		.znaki span.eval 
+		{
+			background: #f1ff92;
+			box-shadow: 0px 4px #22282E;
+			color: #888e5f;
+		}
+
+		.klasa span.czysc
+		{
+			background: #ff9fa8;
+			box-shadow: 0px 4px #22282E;
+			color: white;
+		}
+
+		
+		.znaki span:hover
+		{
+			background: #9c89f6;
+			box-shadow: 0px 4px #22282E;
+			color: white;
+		}
+
+		.znaki span.eval:hover 
+		{
+			background: #abb850;
+			box-shadow: 0px 4px #22282E;
+			color: #ffffff;
+		}
+
+		.klasa span.czysc:hover 
+		{
+			background: #f68991;
+			box-shadow: 0px 4px #22282E;
+			color: white;
+		}
+
+		.znaki span:active
+		{
+			box-shadow: 0px 0px #22282E;
+			klasa: 4px;
+		}
+
+		.znaki span.eval:active 
+		{
+			box-shadow: 0px 0px #22282E;
+			klasa: 4px;
+		}
+
+		.klasa span.czysc:active 
+		{
+			klasa: 4px;
+			box-shadow: 0px 0px #22282E;
+		}
+		
+</style>
+				
+	<div id="kalkulator">
+	
+	<div class="klasa">
+	
+		<span class="czysc">C</span>
+		<div class="ekran"></div>
+		<div class="ekran2"></div>
+		
+	</div>
+	</br>
+	<div class="znaki">
+		
+		<span>7</span>
+		<span>8</span>
+		<span>9</span>
+		
+		<span class="operator">+</span>
+		<span>4</span>
+		
+		<span>5</span>
+		<span>6</span>
+		
+		<span class="operator">-</span>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		
+		<span class="operator">/</span>
+		
+		<span>0</span>
+		<span>.</span>
+		<span class="eval">=</span>
+		<span class="operator">x</span>
+		<span class="operator">i</span>
+		<span style="margin-left:7px;"class="operator">p</span>
+		<span style="margin-left:7px;"class="operator">M+</span>
+		<span style="margin-left:7px;"class="operator">MR</span>
+		<span class="operator">+/-</span>
+		<span style="margin-left:7px;"class="operator">%</span>
+		<span style="margin-left:7px;"class="operator">M-</span>
+		<span style="margin-left:7px;"class="operator">MC</span>
+		
+		
+	</div>
+</div>
+		</div>	
+		
+		<div id="footer">
+			Informatyka Programowanie. Strona w sieci od 2016r. &copy; Wszelkie prawa zastrzeżone
+		</div>
+		
+	</div>
+		<script type="text/javascript">
+
+var znaki = document.querySelectorAll('#kalkulator span');
+var operatory = ['+', '-', 'x', '/', '%'];
+var dziesietny = false;
+var pamiecl=0;
+var pomczyjestznak=0;
+
+for(var i = 0; i < znaki.length; i++) 
+{
+
+	znaki[i].onclick = function(e)
+	{
+		
+		var wloz = document.querySelector('.ekran');
+		
+		var pamiec =  document.querySelector('.ekran2');
+		var pam_wlo = pamiec.innerHTML;
+		
+		
+		
+		var wlozWar = wloz.innerHTML;
+		var jakioper = this.innerHTML;
+		
+		var podrezmienna;
+		var podrezmienna2;
+		
+		
+		if(jakioper == 'C') 
+		{
+			wloz.innerHTML = '';
+			pamiec.innerHTML = '';
+			dziesietny = false;
+		}
+		
+		else if(jakioper == 'p')
+		{
+			if(pamiec.innerHTML=='')
+			{
+			podrezmienna = wloz.innerHTML;
+			pamiec.innerHTML = Math.pow(podrezmienna, 2);
+			}
+			else
+			{
+			podrezmienna = pamiec.innerHTML;
+			pamiec.innerHTML = Math.pow(podrezmienna, 2);
+			}
+			wloz.innerHTML = pamiec.innerHTML;
+			
+		}
+		else if(jakioper == "M+")
+		{
+				if(pamiec.innerHTML=='')
+				{
+				
+				
+				}
+				else
+				{
+					var podrdopam = parseFloat(pamiec.innerHTML);
+					pamiecl += podrdopam;
+				
+				}
+				
+	
+			
+		}
+		else if(jakioper == "M-")
+		{
+			
+				if(pamiec.innerHTML=='')
+				{
+				
+				
+				}
+				else
+				{
+					var podrdopam = parseFloat(pamiec.innerHTML);
+					pamiecl -= podrdopam;
+				
+				}
+	
+			
+		}
+		else if(jakioper == "MC")
+		{
+			
+				
+				pamiecl = '';
+	
+			
+		}
+		else if(jakioper == "MR")
+		{
+		
+				if(wloz.innerHTML=='')
+				{
+					pamiec.innerHTML = pamiecl;
+				}
+				else
+				{
+					if(pomczyjestznak==1)
+					wloz.innerHTML+=pamiecl;
+				
+				}
+				
+		
+				
+		}
+		
+		
+		
+		
+		else if(jakioper == 'i')
+		{
+		
+			if(pamiec.innerHTML=='')
+			{
+			podrezmienna2 = wloz.innerHTML;
+			pamiec.innerHTML = Math.sqrt(podrezmienna2);
+			}
+			else
+			{
+			podrezmienna2 = pamiec.innerHTML;
+			pamiec.innerHTML = Math.sqrt(podrezmienna2);
+			}
+			
+			
+			wloz.innerHTML = pamiec.innerHTML;
+		
+		}
+		else if(jakioper == "+/-")
+		{
+		
+			
+			if(wloz.innerHTML!='')
+			{
+				wloz.innerHTML*=-1;
+			}
+			else if(pamiec.innerHTML=='')
+			{
+			
+			}
+			else
+			{
+				pamiec.innerHTML*=-1;
+			}
+			
+			
+		}
+		
+		
+		else if(jakioper == '=') 
+		{
+			var rownanie = wlozWar;
+			var ostatniznak = rownanie[rownanie.length - 1];
+			
+			
+			rownanie = rownanie.replace(/x/g, '*').replace(/รท/g, '/');
+			
+			
+			if(operatory.indexOf(ostatniznak) > -1 || ostatniznak == '.')
+				rownanie = rownanie.replace(/.$/, '');
+			
+			if(rownanie)
+			{
+			if(eval(rownanie)=='Infinity')
+			{
+	
+				pamiec.innerHTML = 'Nie dziel';
+			
+			}
+			else
+				pamiec.innerHTML = eval(rownanie);
+				wloz.innerHTML = pamiec.innerHTML;
+			}
+				
+			
+		
+			pomczyjestznak=1;	
+			dziesietny = false;
+		}
+		
+		else if(operatory.indexOf(jakioper) > -1) 
+		{
+			
+			var ostatniznak = wlozWar[wlozWar.length - 1];
+			
+			
+			if(wlozWar != '' && operatory.indexOf(ostatniznak) == -1) 
+				wloz.innerHTML += jakioper;
+			
+			
+			else if(wlozWar == '' && jakioper == '-') 
+				wloz.innerHTML += jakioper;
+			
+			
+			if(operatory.indexOf(ostatniznak) > -1 && wlozWar.length > 1) {
+				
+				wloz.innerHTML = wlozWar.replace(/.$/, jakioper);
+			}
+			
+			dziesietny = false;
+		}
+		
+		
+		else if(jakioper == '.') 
+		{
+			if(!dziesietny)
+			{
+				wloz.innerHTML += jakioper;
+				dziesietny = true;
+			}
+		}
+		
+		
+		else 
+		{
+			wloz.innerHTML += jakioper;
+		}
+		
+		
+		
+		e.preventDefault();
+	} 
+}
+</script>
+</body>
+</html>
